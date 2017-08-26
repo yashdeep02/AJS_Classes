@@ -1,0 +1,89 @@
+- In AngularJS we can provide the communication between controllers in
+  four ways.
+
+  1. $broadcast
+
+  2. $emit
+
+  3. $rootScope
+
+  4. custom services
+
+1. $broadcast
+-------------
+    - sharing the data from parent controllers to child controllers
+      called as broadcast communication.
+
+2. $emit
+--------
+    - sharing the data from child controllers to parent controllers
+      called as emit communication.
+
+3. $rootScope
+-------------
+    we can provide the communication between controllers by using rootScope also.
+
+
+4. custom services:
+-------------------
+
+
+app.service("my_service",my_service);
+function my_service(){
+
+    this.my_var="";
+
+    this.setMyVar = function(arg1){
+       this.my_var=arg1;
+    }
+
+    this.getMyVar = function(){
+       return this.my_var;
+    }
+}
+
+
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.clickMe = function(arg1){
+        my_service.setMyVar(arg1);
+    }
+}
+
+
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.clickMe = function(){
+        $scope.var_one = my_service.getMyVar();
+    }
+}
+
+
+ctrl_one.html
+-------------
+<div ng-controller="ctrl_one">
+    <input type="text" ng-model="my_model"><br><br>
+    <button ng-click="clickMe(arg1)">Set Data</button>
+</div>
+
+
+ctrl_two.html
+-------------
+<div ng-controller="ctrl_two">
+    <button ng-click="clickMe()">Get Data</button>
+    <h1>{{var_one}}</h1>
+</div>
+
+-------------------
+ctrl_one.html
+ctrl_one.js
+
+ctrl_two.html
+ctrl_two.js
+
+app.js
+
+my_service.js
+
+index.html
+-------------------
