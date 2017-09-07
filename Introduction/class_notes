@@ -1,0 +1,41 @@
+1. Installation Of Angular4 Application Setup.
+
+2. Differences Between Angular1.x , Angular2.X and Angular4.x
+
+3. Directory Structure Of Angular4 Application.
+
+4. Core Components Of Angular4
+
+
+
+1. Installation Of Angular4 Application Setup.
+---------------------------------------------
+    - Vendor provided Environmental Setup for Angular4 Application.
+
+    - As a Angular4 Developer we must configure the Environmental Setup
+      by using following commands.
+
+
+>npm install -g "@angular/cli"
+
+[Note : cli stands for command line interface
+        cli used to create the environmental setup]
+
+
+
+>ng new First_App
+
+[Note : Automatically "First_App" created in Current Path]
+
+
+>cd First_App
+
+[Note : Automatically we can switch to First_App]
+
+> ng serve
+
+[Note "serve" is the command used to start the Angular4
+      Application]
+
+
+
