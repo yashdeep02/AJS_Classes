@@ -37,5 +37,135 @@
 [Note "serve" is the command used to start the Angular4
       Application]
 
+Directory Structure Of Angular4 Application:
+--------------------------------------------
+    - collection of folders & files under the angular4
+      application called as Directory Structure
+
+e2e:
+    this folder used to write the end to end test cases.
+
+node_modules:
+    this folder contain all the modules required to
+    angular4 application
+
+src:
+    as a angular4 developer we must deploy all
+    "angular4 application files" in src folder
+
+Ex.
+    components
+    services
+    pipes
+        --
+        --
+        --
+
+
+src/app:
+    - this folder used to place all the "ts" files
+
+    Ex.
+        components
+        services
+        pipes
+            --
+            --
+            --
+
+src/assets:
+    - this folder used to place the static resources
+      like images, fonts,....
+
+src/environments:
+    - this folder used to configure the production
+      server environment.
+
+
+src/favicon.ico:
+    - this icon representing the default logo
+      of angular
+
+src/index.html:
+    - this file acting as view in angular4
+      application.
+
+
+src/main.ts:
+    -this file acting as booting file
+     and representing which module
+     need to execute
+
+src/polyfills.ts:
+    - this file representing "backend
+      supporting files needs for
+      browser"  to launch angular4
+      application.
+
+src/styles.css
+    - this file representing global css
+      styles for angular4 application.
+
+src/test.ts:
+
+    - this file representing basic
+      unit test cases for
+      angular4 application.
+
+
+
+src/tsconfig.app.json:
+src/tsconfig.spec.json:
+
+    - this files representing
+      "type script" standards/
+
+
+src/typings.d.ts:
+    - this file representing the
+      validation rules to interact
+      with the 3rd party technologies.
+
+
+angular-cli.json
+----------------
+    - this file representing the directory structure
+      of angular4 application.
+
+karma.conf.js
+-------------
+    - this file used to write the
+      unit test cases.
+
+package.json
+------------
+    - this file representing
+      required modules for building
+      the angular4 application.
+
+protractor.conf.js
+------------------
+
+    - this file meant for writing
+      the integrated test cases for
+      UI Application.
+
+
+tsconfig.json
+-------------
+    - this file representing the
+      configuration while converting
+      the typescript to javascript.
+
+tslint.json
+-----------
+    - this file representing the "order of files" execution
+      in angular4 application.
+
+
+
+
+
+
 
 
