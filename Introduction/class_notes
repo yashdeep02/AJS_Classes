@@ -164,8 +164,122 @@ tslint.json
 
 
 
+Execution of Angular4 Component:
+--------------------------------
+    - As a Angular4 Developer we can't execute component
+      directly with Angular4 Framework.
+
+    - As a Developer we must create Module with Required
+      Component
+
+    - We Must Give the "Angular4 Module" to the "Booting file".
+
+    - Angular4 Framework starts the Execution from
+      Booting File(main.ts).
+
+Ex.
+
+app/component.ts
+-----------------
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+}
+
+
+app/app.module.ts
+-----------------
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+main.ts
+-------
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+Directives:
+-----------
+    - Directives in angular(1.X , 4.X & 5.X) Enhances the
+      HTML Capabilities.
+
+    - We Have Two Types Of Directives.
+
+        1. Predefined Directives.
+
+        2. Custom Directives.
+
+Predefined Directives.
+
+    - The Directives Given By the Angular4 Framework
+      Called as Predefined Directives.
 
 
 
+1. ngModel
+    - ngModel is the one of the Predefined Directive
+      in Angular4 Framework.
 
+    - ngModel Directive used to implement the 2-way
+      data binding.
 
+    - automatic data syncronisation between model and
+      view with the super vision of controller called
+      as 2-way data binding.
+
+    - ngModel Directive available in "FormsModule" class
+      in Angular4.
+
+    - FormsModule class available in "@angular/forms"
+      module
+
+    - to implement two way data binding as a developer
+      we must import "FormsModule" class.
+
+Ex.
+    import {FormsModule} from "@angular/forms"
+
+ng-model.html
+-------------
+<input type="number" [(ngModel)]="model_one"> <br><br>
+<input type="number" [(ngModel)]="model_two"> <br><br>
+<h1 style="color:red">{{model_one+model_two}}</h1>
+
+NgModelDemo.ts
+--------------
+@Component({
+    selector:"ng-model"
+    templateUrl:"ng-model.html"
+})
+export class NgModelDemo{
+    model_one:number=0;
+    model_two:number=0;
+}
