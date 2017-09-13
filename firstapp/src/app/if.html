@@ -1,0 +1,36 @@
+<!--<ul *ngFor="let x of array">
+  <li *ngIf="x.e_sal>50000">{{x | json}}</li>
+</ul>-->
+
+<!--<ul *ngFor="let x of array">
+  <li *ngIf="x.e_id==111">
+    <h1 class="text-primary">{{x | json}}</h1>
+  </li>
+
+  <li *ngIf="x.e_id==222">
+    <h1 class="text-danger">{{x | json}}</h1>
+  </li>
+
+  <li *ngIf="x.e_id==333">
+    <h1 class="text-success">{{x | json}}</h1>
+  </li>
+
+  <li *ngIf="x.e_id==444">
+    <h1 class="text-default">{{x | json}}</h1>
+  </li>
+
+  <li *ngIf="x.e_id==555">
+    <h1 class="text-warning">{{x | json}}</h1>
+  </li>
+</ul>-->
+
+<div *ngFor="let x of array">
+  <ul [ngSwitch]="x.e_id">
+    <li *ngSwitchCase="111">{{x | json}}</li>
+    <li *ngSwitchCase="222">{{x | json}}</li>
+    <li *ngSwitchCase="333">{{x | json}}</li>
+    <li *ngSwitchCase="444">{{x | json}}</li>
+    <li *ngSwitchCase="55">{{x | json}}</li>
+    <li *ngSwitchDefault>{{"Nothing"}}</li>
+  </ul>
+</div>
