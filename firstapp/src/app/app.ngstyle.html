@@ -1,0 +1,9 @@
+<h1 [ngStyle]="{color:'blue'}">Hi</h1>
+
+<h1 [ngStyle]="{color:array[0].name==='Hello'?'red':'green'}">
+  Welcome
+</h1>
+
+<ul *ngFor="let x of array">
+  <li [ngStyle]="{color:getColor(x.id)}">{{x | json}}</li>
+</ul>

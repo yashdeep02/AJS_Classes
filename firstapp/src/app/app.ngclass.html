@@ -1,0 +1,13 @@
+<ul *ngFor="let x of array">
+  <li [ngClass]="{
+    'text-danger':x.post.id==1,
+    'text-success':x.post.id==2,
+    'text-primary':x.post.id==3,
+    'text-default':x.post.id==4,
+    'text-warning':x.post.id==5
+  }">
+    {{x | json}}
+  </li>
+</ul>
+
+
