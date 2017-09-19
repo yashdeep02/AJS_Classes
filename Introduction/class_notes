@@ -283,3 +283,74 @@ export class NgModelDemo{
     model_one:number=0;
     model_two:number=0;
 }
+
+
+Predefined Services:
+--------------------
+    - The Services given by the angular4 framework called
+      as Predefined Services.
+
+1. Http
+    - This predefined service used to connect to servers
+      by using http protocol.
+
+    - "Http" is the Predefined Class Available in "@angular/http"
+       module.
+
+    - "Response" is the Predefined Class , used to handle
+       the response from server calls.
+
+    - "Response" class available in "@angular/http" module.
+
+
+DataService.ts
+--------------
+import {Injectable} from "@angular/core";
+import {Http,Response} from "@angular/http";
+
+@injectable()
+export class DataService{
+    constructor(private http:Http){
+    }
+    getData(){
+        this.http.get("https://www.w3schools.com/
+                       angular/customers.php")
+            .subscribe((res:Response)=>{
+                return res;
+            });
+    }
+}
+
+
+app.component.ts
+----------------
+import {DataService} from "./data.service";
+
+export class AppComponent{
+    response;
+    constructor(private dataService:DataService){
+        this.response = dataService.getData();
+    }
+};
+
+app.component.html
+------------------
+<h1>{{response}}</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
