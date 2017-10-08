@@ -1,0 +1,7 @@
+*ngIf:
+-----
+    - this structural directive used to write the conditions.
+
+Syntax.
+    *ngIf="condition"
+

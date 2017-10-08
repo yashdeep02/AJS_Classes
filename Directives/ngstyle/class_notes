@@ -1,0 +1,10 @@
+ngStyle:
+    - This Directive used to apply the CSS (custom css)
+      to the DOM Elements.
+
+
+Syntax.
+    [ngStyle]="{color:'red'}"
+    [ngStyle]="{color:condition?value1:value2}
+
+

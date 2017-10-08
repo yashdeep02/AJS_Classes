@@ -1,286 +1,341 @@
-Introduction:
+1. Installation Of Angular4 Application Setup.
 
-    - What is AngularJS ??
+2. Differences Between Angular1.x , Angular2.X and Angular4.x
 
-    - Advantages Of AngularJS ??
+3. Directory Structure Of Angular4 Application.
 
-    - Disadvantages Of AngularJS ??
-
-    - Key Features Of AngularJS ??
-
-    - Comparision Of AngularJS - Angular2
-
-                     AngularJS - reactJS
-
-                     AngularJS - NodeJS
-
-What is AngularJS ??
-
-    - AngularJS is the JavaScript client side framework.
-
-    - AngularJS follows the MVC Design Pattern.
-
-        M - Model
-            javascript variables called as model in angularjs.
-            Ex.
-                var data = "Data From DataBase Soon...";
-
-        [Note : where "data" called as model in angularjs]
-
-
-        V - View
-            we can use HTML , HTML5, JADE, Python..... as the View in angularjs.
-
-
-        C - Controller
-            javascript functions called as controllers in angularjs.
-
-
-Advantages of AngularJS:
------------------------
-1. angularjs supports modules.
-    collection of classes called as module(javascript classes).
-
-    - ngAnimate
-        - this module used to develop the animations.
-
-    - ngMessages
-        - this module used to handle the form validations.
-
-    - ngStorage
-        - this module used to work with the storages.
-        - we have two types of client side storages.
-            1. localStorage
-            2. sessionStorage
-
-    - ngRoute
-        - loading the "target webpage" to "source webpage" called as Routing in single page application.
-        - this module used to implement the routing in single page application.
-        - this module is the deprecated module, now a days "no project" using ngRoute Module.
-
-    - ui.router
-        - this module used to implement the Routing in single page application.
-        - this module is 3rd party module.
-        - ui.router module have so many advantages compared to ngRoute Module.
-        - now a days all most all the projects using ui.router module in single page applications.
-
-    Ex.
-
-        <!DOCTYPE html>
-        <html ng-app="app">   // ng-app directive used to assign the logical name for web application.
-
-            //Logic Goes Here
-
-            <script src="bower_components/angular/angular.min.js"></script>
-            <script>
-                var app = angular.module("app",["ngAnimate","ngStorage","ui.router"]);
-                    (object)             (logical name)
-            </script>
-        </html>
+4. Core Components Of Angular4
 
 
 
+1. Installation Of Angular4 Application Setup.
+---------------------------------------------
+    - Vendor provided Environmental Setup for Angular4 Application.
 
-2. As a angular developer we can directly work with HTML DOM.
-    DOM Stands for Document Object Model.
-   Ex.
-    copy the data from "one div" to "another div" by using html and javascript.
-
-    index.html
-    -
-    <html>
-        <div id="div_one">Hello</div>
-        <div id="div_two"></div>
-        <script>
-            document.grtElementById("div_two").innerHTML=
-            document.getElementById("div_one").value;
-        </script>
-    </html>
-
-    [Note : as a html & javascript developer , we must dependent
-            on javascript to work with HTML DOM]
+    - As a Angular4 Developer we must configure the Environmental Setup
+      by using following commands.
 
 
+>npm install -g "@angular/cli"
+
+[Note : cli stands for command line interface
+        cli used to create the environmental setup]
+
+
+
+>ng new First_App
+
+[Note : Automatically "First_App" created in Current Path]
+
+
+>cd First_App
+
+[Note : Automatically we can switch to First_App]
+
+> ng serve
+
+[Note "serve" is the command used to start the Angular4
+      Application]
+
+Directory Structure Of Angular4 Application:
+--------------------------------------------
+    - collection of folders & files under the angular4
+      application called as Directory Structure
+
+e2e:
+    this folder used to write the end to end test cases.
+
+node_modules:
+    this folder contain all the modules required to
+    angular4 application
+
+src:
+    as a angular4 developer we must deploy all
+    "angular4 application files" in src folder
+
+Ex.
+    components
+    services
+    pipes
+        --
+        --
+        --
+
+
+src/app:
+    - this folder used to place all the "ts" files
 
     Ex.
-        copy the data from "one div" to "another div" by using angularjs.
+        components
+        services
+        pipes
+            --
+            --
+            --
 
-    index.html
-    -
-    <html ng-app="app">
-        <div ng-model="div_one">Hello</div>
-        <div ng-bind="div_one"></div>
-        <script src="bower_components/angular/angular.min.js"></script>
-    </html>
+src/assets:
+    - this folder used to place the static resources
+      like images, fonts,....
 
+src/environments:
+    - this folder used to configure the production
+      server environment.
 
-    [1. framework (angular.min.js) starts the execution from ng-app directive
 
-     2. "ng-model" directive creates the object in heap memory with application data
+src/favicon.ico:
+    - this icon representing the default logo
+      of angular
 
-     3. "ng-bind" directive binds the "application data(model data)" to view(html).
+src/index.html:
+    - this file acting as view in angular4
+      application.
 
-     4.  as a angular developer we can work with HTML DOM by using angular directives instead of
-         javascript
-    ]
 
-3. open source code
+src/main.ts:
+    -this file acting as booting file
+     and representing which module
+     need to execute
 
-     - as a angular developer we can customize the framework accroding to application requirement.
+src/polyfills.ts:
+    - this file representing "backend
+      supporting files needs for
+      browser"  to launch angular4
+      application.
 
+src/styles.css
+    - this file representing global css
+      styles for angular4 application.
 
+src/test.ts:
 
-4. two way data binding
-    - angularjs supports two way data binding.
+    - this file representing basic
+      unit test cases for
+      angular4 application.
 
-    [ automatic data syncronization between model and view with the supervision of controller
-    called as "two way data binding" ]
 
 
+src/tsconfig.app.json:
+src/tsconfig.spec.json:
 
+    - this files representing
+      "type script" standards/
 
-    - in the above diagram , we have following server calls.
 
-    1. http get request
+src/typings.d.ts:
+    - this file representing the
+      validation rules to interact
+      with the 3rd party technologies.
 
-           - used to fetch the all employee details from database.
 
-    2. http delete request
+angular-cli.json
+----------------
+    - this file representing the directory structure
+      of angular4 application.
 
-            - used to delete the particular employee details from database.
+karma.conf.js
+-------------
+    - this file used to write the
+      unit test cases.
 
-    3. AJAX Call
+package.json
+------------
+    - this file representing
+      required modules for building
+      the angular4 application.
 
-            - used to sync the data between "view" and "database".
+protractor.conf.js
+------------------
 
+    - this file meant for writing
+      the integrated test cases for
+      UI Application.
 
 
-    [Note : as a programming languages developer we must make above all requests to meet
-            application requirement
+tsconfig.json
+-------------
+    - this file representing the
+      configuration while converting
+      the typescript to javascript.
 
-            Ex.
-                java
-                dot net
-                php
-                --
-                -- ]
+tslint.json
+-----------
+    - this file representing the "order of files" execution
+      in angular4 application.
 
-    [Note : as a angularjs / angular2 developer we can only two server calls because of two way data binding]
 
-    [Note : two way data binding reduces the burden on the server]
 
+Execution of Angular4 Component:
+--------------------------------
+    - As a Angular4 Developer we can't execute component
+      directly with Angular4 Framework.
 
-Disadvantages of AngularJS
---------------------------
-1. secuirity
-    we are implementing the business components at client side , so we are missing the secuirity.
+    - As a Developer we must create Module with Required
+      Component
 
-2. client (browser) must enables the javascript.
+    - We Must Give the "Angular4 Module" to the "Booting file".
 
-3. understanding the angular applications are difficult because of no coding standards from vendors.
+    - Angular4 Framework starts the Execution from
+      Booting File(main.ts).
 
+Ex.
 
-key features of angularjs
--------------------------
+app/component.ts
+-----------------
 
-1. single page applications
+import { Component } from '@angular/core';
 
-    loading the "target web pages" to "source web page" without refreshing the whole application
-    called as single page applications.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+}
 
-    as a angular developer we can develop the single page applications.
 
+app/app.module.ts
+-----------------
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
+main.ts
+-------
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-2. directives
-    directives in angularjs , enhances the html capabilities.
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-    we have two types of directives.
+if (environment.production) {
+  enableProdMode();
+}
 
-        1. predefined directives
-                - the directives given by the framework called as predefined directives.
-                Ex.
-                    ng-app
-                    ng-model
-                    ng-bind
+platformBrowserDynamic().bootstrapModule(AppModule);
 
-        2. custom directives
-                - the directives developed by developer called as custom directives.
-                Ex.
-                    my_dir
 
-3. services
-    - we can share the common business logic to multiple controllers with the help of services.
-    - we have two types of services.
-        1.predefined services
-            - the services given by the framework called as predefined services.
-                Ex.
-                    $http - used to connect to servers by using http protocol
-                    $q    - used to make the async calls
-                    $interval - used to execute a custom function repetedely
-                    $timeout - used to execute a custom function with a given specified time
-                    $location - used to know the absolute path of web application.
+Directives:
+-----------
+    - Directives in angular(1.X , 4.X & 5.X) Enhances the
+      HTML Capabilities.
 
-        2. custom services:
-            - creating our own service based on application requirement called as custom service.
+    - We Have Two Types Of Directives.
 
+        1. Predefined Directives.
 
-4. filters
-    - filters are used to format the application data.
-    - we have two types of filters
+        2. Custom Directives.
 
-        1. predefined filters
-            - the filters given by the framework called as predefined filters.
-        2. custom filters
-            - the filters developed by developer called as custom filters.
+Predefined Directives.
 
+    - The Directives Given By the Angular4 Framework
+      Called as Predefined Directives.
 
-differences between angularjs - angular2
-----------------------------------------
 
-    - by using angularjs , we can prepare web applications.
-      by using angular2 , we can prepare web and mobile applications.
-        [Note : we can prepare the mobile applications with ionic framework]
 
+1. ngModel
+    - ngModel is the one of the Predefined Directive
+      in Angular4 Framework.
 
-    - angularjs introduced by google.
-      angular2 introduced by google and microsoft.
+    - ngModel Directive used to implement the 2-way
+      data binding.
 
+    - automatic data syncronisation between model and
+      view with the super vision of controller called
+      as 2-way data binding.
 
-    - angularjs difficult in programming because of no coding standards.
-      angular2 easy compared to angularjs.
+    - ngModel Directive available in "FormsModule" class
+      in Angular4.
 
+    - FormsModule class available in "@angular/forms"
+      module
 
+    - to implement two way data binding as a developer
+      we must import "FormsModule" class.
 
-    - in general we will prepare angularjs applications by using "javascript".
-      in general we will prepare angular2 applications by using "typescript"
-      [transpilation : converting the typescript to javascript called as transpilation]
+Ex.
+    import {FormsModule} from "@angular/forms"
 
+ng-model.html
+-------------
+<input type="number" [(ngModel)]="model_one"> <br><br>
+<input type="number" [(ngModel)]="model_two"> <br><br>
+<h1 style="color:red">{{model_one+model_two}}</h1>
 
+NgModelDemo.ts
+--------------
+@Component({
+    selector:"ng-model"
+    templateUrl:"ng-model.html"
+})
+export class NgModelDemo{
+    model_one:number=0;
+    model_two:number=0;
+}
 
-    - angularjs have a poor performance compared to angular2.
-      angular2 have a 5X more performance compared to angularjs.
 
+Predefined Services:
+--------------------
+    - The Services given by the angular4 framework called
+      as Predefined Services.
 
-    - we can run the angularjs applications locally
-      we must dependent environmental setup provided vendor to run angular2 applications.
+1. Http
+    - This predefined service used to connect to servers
+      by using http protocol.
 
+    - "Http" is the Predefined Class Available in "@angular/http"
+       module.
 
+    - "Response" is the Predefined Class , used to handle
+       the response from server calls.
 
-differences between angularjs - reactjs
----------------------------------------
+    - "Response" class available in "@angular/http" module.
 
-    - angularjs is the framework (javascript framework)
-      reactjs is the javascript library.
 
-    -
+DataService.ts
+--------------
+import {Injectable} from "@angular/core";
+import {Http,Response} from "@angular/http";
 
+@injectable()
+export class DataService{
+    constructor(private http:Http){
+    }
+    getData(){
+        this.http.get("https://www.w3schools.com/
+                       angular/customers.php")
+            .subscribe((res:Response)=>{
+                return res;
+            });
+    }
+}
 
-    - angularjs recomended for data rendering on view(JSON)
-      reactJS recomended for data structures manipulations (server side data rendering)
 
+app.component.ts
+----------------
+import {DataService} from "./data.service";
 
+export class AppComponent{
+    response;
+    constructor(private dataService:DataService){
+        this.response = dataService.getData();
+    }
+};
 
+app.component.html
+------------------
+<h1>{{response}}</h1>
 
 
 
@@ -290,96 +345,6 @@ differences between angularjs - reactjs
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            Ex.
-
-                function ctrl(){
-                    var data = "data from database"
-                }
-
-                [Note : where ctrl called as controller in angularJS]
 
 
 
